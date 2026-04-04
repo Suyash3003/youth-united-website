@@ -9,6 +9,7 @@ const events = [
     description:
       'A joyful celebration for differently-abled children from schools and NGOs across Patiala, featuring drawing, clay modelling, singing, and dancing at the Main Auditorium.',
     icon: 'fa-solid fa-universal-access',
+    image: null,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const events = [
     description:
       'Youth United showcased its culture at the Frosh Society Fair with interactive stalls, a custom dice game, and a "Pick One and Leave One" board to engage the batch of 2029.',
     icon: 'fa-solid fa-bullhorn',
+    image: '/images/events/society-fair.jpg',
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const events = [
     description:
       'A vibrant orientation for new members featuring the "Question to a Question" icebreaker, a Menti Quiz, departmental introductions, and a closing music jamming session.',
     icon: 'fa-solid fa-people-group',
+    image: '/images/events/orientation.jpg',
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const events = [
     description:
       "Cyclists rode from Chandigarh to Patiala promoting eco-friendly transport. Volunteers welcomed them on campus and toured Thapar's Recycling Plant to learn about waste management.",
     icon: 'fa-solid fa-bicycle',
+    image: '/images/events/brd.jpg',
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ const events = [
     description:
       'A donation drive with the Rotaract Club collecting clothes, shoes, and toys via a Wall of Kindness, distributed to Sai Bridh Ashram, Masti Ki Pathshala, and slum communities.',
     icon: 'fa-solid fa-hand-holding-heart',
+    image: '/images/events/utsav-e-solace.jpg',
   },
   {
     id: 6,
@@ -64,6 +69,7 @@ const events = [
     description:
       "Volunteers joined a district-level padyatra from Quila Mubarak Chowk to Kali Mata Mandir to commemorate Sardar Vallabhbhai Patel's 150th birth anniversary.",
     icon: 'fa-solid fa-people-arrows',
+    image: '/images/events/unity-march.jpg',
   },
   {
     id: 7,
@@ -75,6 +81,7 @@ const events = [
     description:
       'On National Youth Day, Youth United with NCC and NSS organized the Swadeshi Sankalp Run with a speaker session on Swami Vivekanand\'s ideals of self-reliance and national pride.',
     icon: 'fa-solid fa-person-running',
+    image: '/images/events/run-for-swadeshi.jpg',
   },
   {
     id: 8,
@@ -86,6 +93,7 @@ const events = [
     description:
       'A heartfelt sports and fun day for children from Masti Ki Pathshala, featuring a Mini Game Zone, face painting, traditional games like Kho-Kho and Pithu, and a cake-cutting ceremony.',
     icon: 'fa-solid fa-child-reaching',
+    image: '/images/events/umang.jpg',
   },
 ];
 

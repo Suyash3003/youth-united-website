@@ -7,13 +7,12 @@ import { useNavbarScroll } from '../../../hooks/useNavbarScroll';
 import './Navbar.css';
 
 export default function Navbar() {
-  const { currentPage, setCurrentPage } = usePage();
+  const { currentPage, navigateTo } = usePage();
   const scrolled = useNavbarScroll();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNav = (id) => {
-    setCurrentPage(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigateTo(id);
   };
 
   return (

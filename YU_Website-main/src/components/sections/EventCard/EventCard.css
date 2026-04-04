@@ -80,6 +80,10 @@
 .event-card-body h3 {
   font-family: var(--font-display); font-size: 1.35rem; font-weight: 600;
   line-height: 1.2; margin-bottom: 10px; color: var(--grey-900);
+  transition: var(--transition);
+}
+.event-card:hover h3 {
+  color: var(--green-soft);
 }
 .event-card-body p { font-size: 0.875rem; color: var(--grey-400); line-height: 1.65; margin-bottom: 20px; }
 .event-meta {

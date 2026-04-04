@@ -5,7 +5,7 @@ import { usePage } from '../../../context/PageContext';
 import './EventsPreviewSection.css';
 
 export default function EventsPreviewSection() {
-  const { setCurrentPage } = usePage();
+  const { navigateTo } = usePage();
   const featured = events.slice(0, 3);
 
   return (
@@ -17,7 +17,7 @@ export default function EventsPreviewSection() {
             <h2 className="section-title reveal delay-1">Recent <em>Events</em></h2>
           </div>
           <a href="/events" className="btn btn-outline reveal delay-2"
-            onClick={(e) => { e.preventDefault(); setCurrentPage('events'); window.scrollTo({top:0,behavior:'smooth'}); }}>
+            onClick={(e) => { e.preventDefault(); navigateTo('events'); }}>
             View All Events <i className="fa-solid fa-arrow-right"></i>
           </a>
         </div>

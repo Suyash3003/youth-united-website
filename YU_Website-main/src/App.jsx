@@ -8,6 +8,7 @@ import Loader from './components/Loader/Loader';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import EventsPage from './pages/EventsPage';
+import EventDetailPage from './pages/EventDetailPage';
 import MembersPage from './pages/MembersPage';
 import GalleryPage from './pages/GalleryPage';
 import JoinUsPage from './pages/JoinUsPage';
@@ -17,12 +18,13 @@ function PageRouter() {
   const { currentPage } = usePage();
 
   const pages = {
-    home:    <HomePage />,
-    about:   <AboutPage />,
-    events:  <EventsPage />,
-    members: <MembersPage />,
-    gallery: <GalleryPage />,
-    joinus:  <JoinUsPage />,
+    home:           <HomePage />,
+    about:          <AboutPage />,
+    events:         <EventsPage />,
+    'event-detail': <EventDetailPage />,
+    members:        <MembersPage />,
+    gallery:        <GalleryPage />,
+    joinus:         <JoinUsPage />,
   };
 
   return pages[currentPage] || <HomePage />;
