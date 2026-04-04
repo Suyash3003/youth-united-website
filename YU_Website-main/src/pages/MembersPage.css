@@ -1,0 +1,25 @@
+.members-page-section {
+  padding: 28px clamp(20px, 5vw, 80px) 64px;
+}
+.members-page-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.members-role-tabs {
+  gap: 8px 10px;
+  justify-content: flex-start;
+}
+.members-role-tabs .filter-tab {
+  padding: 9px 16px;
+  font-size: 0.76rem;
+  line-height: 1.25;
+  text-align: center;
+  max-width: 100%;
+}
+.members-empty-hint {
+  color: var(--grey-400);
+  text-align: center;
+  padding: 48px 0 0;
+  font-size: 0.9rem;
+  margin: 0;
+}
