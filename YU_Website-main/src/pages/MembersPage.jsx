@@ -13,13 +13,11 @@ const ROLE_TABS = [
   { key: 'Faculty', label: 'Faculty' },
   { key: 'general-secretary', label: 'General Secretary' },
   { key: 'joint-secretary', label: 'Joint Secretary' },
-  { key: 'finance-secretary', label: 'Finance Secretary' },
+
   { key: 'em-heads', label: 'EM Heads' },
-  { key: 'convener', label: 'Convener' },
+
   { key: 'marketing-heads', label: 'Marketing Heads' },
-  { key: 'content-doc-head', label: 'Content & Doc Head' },
-  { key: 'design-heads', label: 'Design Heads' },
-  { key: 'creativity-head', label: 'Creativity Head' },
+
 ];
 
 export default function MembersPage() {

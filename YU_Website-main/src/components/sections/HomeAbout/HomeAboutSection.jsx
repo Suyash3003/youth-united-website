@@ -13,7 +13,7 @@ const values = [
 ];
 
 export default function HomeAboutSection() {
-  const { setCurrentPage } = usePage();
+  const { navigateTo } = usePage();
 
   return (
     <div className="home-about">
@@ -46,7 +46,7 @@ export default function HomeAboutSection() {
           <SectionHeader
             label="Who We Are"
             title='A <em>Student-Led</em> Force for Change'
-            subtitle="Founded in 2018, Youth United bridges the gap between campus life and community need — turning student energy into lasting social impact."
+            subtitle="Founded in 2017, Youth United bridges the gap between campus life and community need — turning student energy into lasting social impact."
           />
           <p className="reveal delay-2" style={{ fontSize:'0.95rem', color:'var(--grey-400)', lineHeight:1.8, margin:'20px 0 28px' }}>
             We believe the most powerful change-makers are those closest to the challenges.
@@ -62,7 +62,7 @@ export default function HomeAboutSection() {
             ))}
           </div>
           <div style={{ marginTop: 32 }} className="reveal delay-4">
-            <a href="/about" className="btn btn-primary" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo({top:0,behavior:'smooth'}); }}>
+            <a href="/about" className="btn btn-primary" onClick={(e) => { e.preventDefault(); navigateTo('about'); }}>
               Our Story <i className="fa-solid fa-arrow-right"></i>
             </a>
           </div>

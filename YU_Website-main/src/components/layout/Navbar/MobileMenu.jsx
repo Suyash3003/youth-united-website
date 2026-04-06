@@ -3,11 +3,10 @@ import navLinks from '../../../data/navigation';
 import { usePage } from '../../../context/PageContext';
 
 export default function MobileMenu({ isOpen, onClose }) {
-  const { setCurrentPage } = usePage();
+  const { navigateTo } = usePage();
 
   const handleNav = (id) => {
-    setCurrentPage(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigateTo(id);
     onClose();
   };
 

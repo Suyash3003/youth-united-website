@@ -92,28 +92,33 @@
   margin: 0 auto;
 }
 .members-grid   {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   align-items: stretch;
 }
-/* 15 leadership cards: 5×3 on large screens; overrides global .members-grid breakpoints */
+.members-grid > * { width: calc(25% - 18px); }
+
+/* 6 team members looks perfect in a 3-column layout */
 .members-grid.members-leadership-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 28px;
 }
+.members-grid.members-leadership-grid > * { width: calc(33.333% - 18.66px); }
+
 @media (max-width: 1200px) {
-  .members-grid.members-leadership-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .members-grid.members-leadership-grid > * { width: calc(33.333% - 18.66px); }
 }
 @media (max-width: 1024px) {
-  .members-grid:not(.members-leadership-grid) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .members-grid.members-leadership-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .members-grid:not(.members-leadership-grid) > * { width: calc(33.333% - 16px); }
+  .members-grid.members-leadership-grid > * { width: calc(33.333% - 18.66px); }
 }
 @media (max-width: 768px) {
-  .members-grid.members-leadership-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .members-grid:not(.members-leadership-grid) > * { width: calc(50% - 12px); }
+  .members-grid.members-leadership-grid > * { width: calc(50% - 14px); }
 }
 @media (max-width: 480px) {
-  .members-grid.members-leadership-grid { grid-template-columns: 1fr; }
+  .members-grid.members-leadership-grid > * { width: 100%; }
 }
 
 /* Timeline */

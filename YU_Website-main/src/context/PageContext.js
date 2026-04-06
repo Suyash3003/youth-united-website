@@ -9,7 +9,7 @@ export function PageProvider({ children }) {
   const navigateTo = (page, evId = null) => {
     setCurrentPage(page);
     setActiveEventId(evId);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

@@ -9,7 +9,7 @@ const HeroBlobScene = lazy(() => import('../../three/HeroBlobScene'));
 const HeroMiniBlobScene = lazy(() => import('../../three/HeroMiniBlobScene'));
 
 export default function HeroSection() {
-  const { setCurrentPage } = usePage();
+  const { navigateTo } = usePage();
   const webgl = useEnableWebGL(900);
 
   return (
@@ -33,7 +33,7 @@ export default function HeroSection() {
       <div className="hero-content">
         <div className="hero-text">
           <div className="hero-badge">
-            <span></span> Thapar Institute · Since 2018
+            <span></span> Thapar Institute · Since 2017
           </div>
           <h1 className="hero-title">
             Empowering<br /><em>Change,</em><br />Together.
@@ -43,10 +43,10 @@ export default function HeroSection() {
             meaningful impact through education, community service, and social innovation.
           </p>
           <div className="hero-actions">
-            <a href="/join" className="btn btn-primary" onClick={(e) => { e.preventDefault(); setCurrentPage('joinus'); window.scrollTo({top:0,behavior:'smooth'}); }}>
+            <a href="/join" className="btn btn-primary" onClick={(e) => { e.preventDefault(); navigateTo('joinus'); }}>
               <i className="fa-solid fa-arrow-right"></i> Join Us
             </a>
-            <a href="/events" className="btn btn-outline" onClick={(e) => { e.preventDefault(); setCurrentPage('events'); window.scrollTo({top:0,behavior:'smooth'}); }}>
+            <a href="/events" className="btn btn-outline" onClick={(e) => { e.preventDefault(); navigateTo('events'); }}>
               <i className="fa-regular fa-calendar"></i> Explore Events
             </a>
           </div>
@@ -73,7 +73,7 @@ export default function HeroSection() {
             <div className="text"><strong>500+</strong><span>Active Volunteers</span></div>
           </div>
           <div className="hero-float-card2">
-            <strong>9+</strong><br /><span>Years of Impact</span>
+            <strong>10+</strong><br /><span>Years of Impact</span>
           </div>
         </div>
       </div>

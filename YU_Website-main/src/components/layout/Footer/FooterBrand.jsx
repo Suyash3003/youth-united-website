@@ -11,7 +11,7 @@ export default function FooterBrand() {
         <img className="footer-logo-img" src={LOGO_SRC} alt={LOGO_ALT} width={52} height={52} decoding="async" />
         <div className="footer-logo-text">Youth United</div>
       </div>
-      <p>Empowering students at Thapar Institute to create meaningful change through community service, education, and social innovation since 2018.</p>
+      <p>Empowering students at Thapar Institute to create meaningful change through community service, education, and social innovation since 2017.</p>
       <div className="footer-socials">
         <a
           className="footer-social footer-social--instagram"

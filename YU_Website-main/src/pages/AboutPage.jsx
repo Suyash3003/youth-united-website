@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import MVVSection from '../components/sections/About/MVVSection';
-import TeamSection from '../components/sections/About/TeamSection';
+
 import TimelineSection from '../components/sections/About/TimelineSection';
 import { triggerReveal } from '../utils/reveal';
 import '../components/sections/About/About.css';
@@ -14,11 +14,11 @@ export default function AboutPage() {
         <div className="about-hero-content">
           <span className="page-label">About Us</span>
           <h1>Who We <em style={{ fontStyle:'italic', color:'var(--green-soft)' }}>Are</em></h1>
-          <p>A passionate community of Thapar students committed to bridging the gap between education and meaningful social action since 2018.</p>
+          <p>A passionate community of Thapar students committed to bridging the gap between education and meaningful social action since 2017.</p>
         </div>
       </div>
       <MVVSection />
-      <TeamSection />
+
       <TimelineSection />
     </main>
   );

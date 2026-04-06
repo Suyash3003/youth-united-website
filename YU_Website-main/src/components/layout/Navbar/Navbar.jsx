@@ -23,11 +23,11 @@ export default function Navbar() {
           {navLinks.map(link => (
             <a
               key={link.id}
-              href="#"
+              href={link.path}
               className={`${currentPage === link.id ? 'active' : ''} ${link.cta ? 'nav-cta' : ''}`}
               onClick={(e) => { e.preventDefault(); handleNav(link.id); }}
             >
-              {link.label}
+              {link.cta ? <><i className="fa-solid fa-arrow-right"></i> {link.label}</> : link.label}
             </a>
           ))}
         </div>
