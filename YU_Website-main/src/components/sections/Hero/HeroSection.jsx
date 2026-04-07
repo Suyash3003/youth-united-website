@@ -32,9 +32,6 @@ export default function HeroSection() {
       </div>
       <div className="hero-content">
         <div className="hero-text">
-          <div className="hero-badge">
-            <span></span> Thapar Institute · Since 2017
-          </div>
           <h1 className="hero-title">
             Empowering<br /><em>Change,</em><br />Together.
           </h1>

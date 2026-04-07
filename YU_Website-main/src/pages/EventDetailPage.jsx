@@ -27,11 +27,16 @@ export default function EventDetailPage() {
       {/* Hero Section */}
       <div className="about-hero" style={{ minHeight: '400px', position: 'relative', overflow: 'hidden' }}>
         {eventBase.image ? (
-          <div className="about-hero-bg" style={{ 
-            backgroundImage: `url(${eventBase.image})`,
-            filter: 'brightness(0.3) blur(2px)',
-            transform: 'scale(1.1)'
-          }}></div>
+          <>
+            <div className="about-hero-bg" style={{ 
+              backgroundImage: `url("${eventBase.image}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              filter: 'brightness(0.5)'
+            }}></div>
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent, rgba(10,10,10,0.8))', zIndex: 0 }}></div>
+          </>
         ) : (
           <div className="about-hero-bg"></div>
         )}
@@ -132,17 +137,6 @@ export default function EventDetailPage() {
         </div>
       </section>
 
-      {/* Gallery Highlight (Optional) */}
-      {eventBase.image && (
-        <section style={{ padding: '80px 20px', background: '#050505' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-             <h2 style={{ fontSize: '2rem', marginBottom: '40px', textAlign: 'center' }}>Event Visuals</h2>
-             <div style={{ borderRadius: '32px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
-                <RemoteImage src={eventBase.image} width={1200} height={600} alt={eventDetail.title} style={{ width: '100%', height: 'auto', display: 'block' }} />
-             </div>
-          </div>
-        </section>
-      )}
     </main>
   );
 }
