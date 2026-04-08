@@ -90,14 +90,14 @@
   position: absolute;
   left: clamp(12px, 4vw, 64px);
   bottom: clamp(16px, 5vh, 56px);
-  width: min(240px, 42vw);
-  height: min(240px, 42vw);
-  max-width: 260px;
-  max-height: 260px;
+  width: min(300px, 50vw);
+  height: min(300px, 50vw);
+  max-width: 320px;
+  max-height: 320px;
   z-index: 2;
   pointer-events: none;
-  opacity: 0.9;
-  filter: drop-shadow(0 14px 32px rgba(10, 92, 66, 0.18));
+  opacity: 0.64;
+  filter: none;
   overflow: visible;
 }
 .hero-mini-webgl-canvas {

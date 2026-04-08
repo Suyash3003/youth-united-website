@@ -2,21 +2,23 @@ import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere } from '@react-three/drei';
 
-/** Compact orb — motion tuned to match hero `HeroBlobScene` (Float + distort + yaw rate) */
+/** Compact orb styled to match the right hero orb while preserving its smaller size. */
 function MiniDistortOrb() {
   const ref = useRef();
+
   useFrame((s) => {
     if (ref.current) ref.current.rotation.y = s.clock.elapsedTime * 0.11;
   });
+
   return (
     <Float speed={1.6} rotationIntensity={0.24} floatIntensity={0.32}>
-      <Sphere ref={ref} args={[1, 48, 48]} scale={0.92}>
+      <Sphere ref={ref} args={[1, 80, 80]} scale={0.9}>
         <MeshDistortMaterial
-          color="#6ecfb5"
-          emissive="#4a9d86"
-          emissiveIntensity={0.1}
-          roughness={0.52}
-          metalness={0.38}
+          color="#0d7a58"
+          emissive="#052e22"
+          emissiveIntensity={0.42}
+          roughness={0.28}
+          metalness={0.78}
           distort={0.32}
           speed={1.9}
         />
@@ -40,10 +42,9 @@ export default function HeroMiniBlobScene() {
       dpr={[1, 1.5]}
     >
       <Suspense fallback={null}>
-        <ambientLight intensity={0.78} color="#e6f4ed" />
-        <directionalLight position={[6, 8, 5]} intensity={1.05} color="#fdfdfb" />
-        <directionalLight position={[-5, 0, -4]} intensity={0.48} color="#b8e8d4" />
-        <pointLight position={[-2.5, -1.5, 3.5]} intensity={0.4} color="#dff5ec" />
+        <ambientLight intensity={0.45} />
+        <directionalLight position={[12, 10, 8]} intensity={1} color="#fdfdfb" />
+        <pointLight position={[-5, -3, 4]} intensity={0.75} color="#9ed4be" />
         <MiniDistortOrb />
       </Suspense>
     </Canvas>
