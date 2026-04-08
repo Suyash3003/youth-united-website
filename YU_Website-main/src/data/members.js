@@ -120,4 +120,31 @@ const members = [
 
 ];
 
+export const techMembers = [
+  {
+    id: 'tech-1',
+    name: 'Suyash Sahota',
+    initials: 'SS',
+    role: 'Website Developer',
+    department: 'Tech Team',
+    dept: 'Tech',
+    year: null,
+    bio: 'Architected and engineered the Youth United digital platform, shaping the organization’s modern online presence.',
+    leadership: true,
+    socials: { linkedin: '#' },
+  },
+  {
+    id: 'tech-2',
+    name: 'Parth Goyal',
+    initials: 'PG',
+    role: 'Website Developer',
+    department: 'Tech Team',
+    dept: 'Tech',
+    year: null,
+    bio: 'Collaborated on building the Youth United website, developing interactive components and ensuring performance.',
+    leadership: true,
+    socials: { linkedin: '#' },
+  }
+];
+
 export default members;

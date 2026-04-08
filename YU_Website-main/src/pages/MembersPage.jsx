@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import members, { facultyMembers } from '../data/members';
+import members, { facultyMembers, techMembers } from '../data/members';
 import MemberCard from '../components/sections/MemberCard/MemberCard';
 import { triggerReveal } from '../utils/reveal';
 import '../components/sections/MemberCard/MemberCard.css';
@@ -15,9 +15,8 @@ const ROLE_TABS = [
   { key: 'joint-secretary', label: 'Joint Secretary' },
 
   { key: 'em-heads', label: 'EM Heads' },
-
   { key: 'marketing-heads', label: 'Marketing Heads' },
-
+  { key: 'Developers', label: 'Developers' },
 ];
 
 export default function MembersPage() {
@@ -26,9 +25,11 @@ export default function MembersPage() {
   useEffect(() => { setTimeout(triggerReveal, 100); }, [active]);
 
   const showFaculty = active === 'All' || active === 'Faculty';
+  const showTech = active === 'All' || active === 'Developers';
+  
   const filteredStudents =
-    active === 'All' || active === 'Faculty'
-      ? active === 'Faculty'
+    active === 'All' || active === 'Faculty' || active === 'Developers'
+      ? active === 'Faculty' || active === 'Developers'
         ? []
         : members
       : members.filter(m => m.roleFilter === active);
@@ -66,15 +67,23 @@ export default function MembersPage() {
               </div>
             </div>
           )}
-          {active !== 'Faculty' && (
+          {active !== 'Faculty' && active !== 'Developers' && (
             <div className="members-grid members-leadership-grid" style={{ marginTop: showFaculty && active === 'All' ? 32 : 40 }}>
               {filteredStudents.map(m => <MemberCard key={m.id} member={m} />)}
             </div>
           )}
-          {active !== 'Faculty' && filteredStudents.length === 0 && (
+          {active !== 'Faculty' && active !== 'Developers' && filteredStudents.length === 0 && (
             <p className="members-empty-hint">
               No members in this role yet.
             </p>
+          )}
+          {showTech && (
+            <div className="team-block team-block--tech" style={{ marginTop: active === 'All' ? 48 : 32 }}>
+              <h3 className="team-block-title">Website Developers</h3>
+              <div className="faculty-grid">
+                {techMembers.map(m => <MemberCard key={m.id} member={m} />)}
+              </div>
+            </div>
           )}
         </div>
       </section>
