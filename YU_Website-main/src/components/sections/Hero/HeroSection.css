@@ -4,11 +4,50 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 100% 80% at 50% -20%, rgba(196, 163, 90, 0.08) 0%, transparent 50%),
-    linear-gradient(180deg, var(--grey-100) 0%, rgba(230, 244, 237, 0.5) 45%, var(--grey-100) 100%);
+  background: var(--grey-100);
   padding-top: var(--nav-height);
 }
+
+.hero-photo-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-photo-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.34;
+  filter: blur(1px) saturate(0.92) contrast(0.9);
+  transform: scale(1.03);
+}
+
+.hero-photo-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.74),
+    rgba(255, 255, 255, 0.42),
+    rgba(16, 185, 129, 0.16)
+  );
+}
+
+.hero-photo-bg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0) 44%,
+    rgba(16, 53, 39, 0.17) 100%
+  );
+  opacity: 0.14;
+}
+
 .hero-canvas-layer {
   position: absolute;
   top: 0;
@@ -17,7 +56,7 @@
   width: auto;
   min-width: min(960px, 120vw);
   height: 100%;
-  z-index: 0;
+  z-index: 1;
   opacity: 0.88;
   pointer-events: none;
   /* Fade only near the inner (left) edge of this strip; orb stays full size on the right */
@@ -74,19 +113,19 @@
     radial-gradient(ellipse 70% 85% at 72% 45%, rgba(158, 212, 190, 0.4) 0%, transparent 58%),
     radial-gradient(ellipse 50% 55% at 12% 75%, rgba(10, 92, 66, 0.08) 0%, transparent 55%),
     radial-gradient(ellipse 40% 40% at 90% 15%, rgba(196, 163, 90, 0.1) 0%, transparent 50%);
-  z-index: 0;
+  z-index: 1;
 }
 .hero-gridlines {
   position: absolute;
   inset: 0;
   background: var(--gradient-hero-mesh);
-  opacity: 0.55;
-  z-index: 0;
+  opacity: 0.3;
+  z-index: 1;
   pointer-events: none;
 }
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 1240px;
   margin: 0 auto;
   padding: 72px clamp(20px, 5vw, 80px) 88px;

@@ -9,7 +9,7 @@ const events = [
     description:
       'A joyful celebration for differently-abled children from schools and NGOs across Patiala, featuring drawing, clay modelling, singing, and dancing at the Main Auditorium.',
     icon: 'fa-solid fa-universal-access',
-    image: null,
+    image: '/images/events/la-fiesta.mp4',
   },
   {
     id: 2,

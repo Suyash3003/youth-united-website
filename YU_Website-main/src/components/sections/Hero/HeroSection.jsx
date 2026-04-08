@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { usePage } from '../../../context/PageContext';
-import { HERO_IMAGE } from '../../../constants/media';
+import { HERO_IMAGE, HOME_BACKGROUND_IMAGE } from '../../../constants/media';
 import RemoteImage from '../../ui/RemoteImage';
 import useEnableWebGL from '../../../hooks/useEnableWebGL';
 import './HeroSection.css';
@@ -14,6 +14,18 @@ export default function HeroSection() {
 
   return (
     <section className="hero">
+      <div className="hero-photo-bg-layer" aria-hidden>
+        <img
+          src={HOME_BACKGROUND_IMAGE}
+          alt=""
+          className="hero-photo-bg-image"
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+        />
+        <div className="hero-photo-bg-gradient"></div>
+        <div className="hero-photo-bg-vignette"></div>
+      </div>
       <div className="hero-canvas-layer" aria-hidden>
         {webgl && (
           <Suspense fallback={null}>

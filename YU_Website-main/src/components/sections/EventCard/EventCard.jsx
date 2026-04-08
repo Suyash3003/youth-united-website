@@ -3,12 +3,16 @@ import RemoteImage from '../../ui/RemoteImage';
 import { usePage } from '../../../context/PageContext';
 import './EventCard.css';
 
-export default function EventCard({ event }) {
+export default function EventCard({ event, className = '' }) {
   const { navigateTo } = usePage();
   const hasPhoto = Boolean(event.image);
 
   return (
-    <div className="event-card" onClick={() => navigateTo('event-detail', event.id)} style={{ cursor: 'pointer' }}>
+    <div
+      className={`event-card ${className}`.trim()}
+      onClick={() => navigateTo('event-detail', event.id)}
+      style={{ cursor: 'pointer' }}
+    >
       <div className="event-card-img">
         {hasPhoto ? (
           <RemoteImage

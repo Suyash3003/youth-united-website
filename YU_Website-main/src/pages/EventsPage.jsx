@@ -17,12 +17,41 @@ const CATEGORIES = [
   'Children',
 ];
 
+const MONTH_INDEX = {
+  jan: 0,
+  feb: 1,
+  mar: 2,
+  apr: 3,
+  may: 4,
+  jun: 5,
+  jul: 6,
+  aug: 7,
+  sep: 8,
+  oct: 9,
+  nov: 10,
+  dec: 11,
+};
+
+function getEventStartDate(dateLabel) {
+  const match = String(dateLabel || '').match(/([A-Za-z]{3,9})\s+(\d{1,2}),\s*(\d{4})/);
+  if (!match) return new Date(8640000000000000);
+
+  const [, monthToken, dayToken, yearToken] = match;
+  const month = MONTH_INDEX[monthToken.slice(0, 3).toLowerCase()];
+  if (month == null) return new Date(8640000000000000);
+
+  return new Date(Number(yearToken), month, Number(dayToken));
+}
+
 export default function EventsPage() {
   const [active, setActive] = useState('All');
 
   useEffect(() => { setTimeout(triggerReveal, 100); }, [active]);
 
-  const filtered = active === 'All' ? events : events.filter(e => e.category === active);
+  const filtered = [...(active === 'All'
+    ? events
+    : events.filter((event) => event.category === active))]
+    .sort((a, b) => getEventStartDate(a.date) - getEventStartDate(b.date));
 
   return (
     <main>
@@ -52,9 +81,14 @@ export default function EventsPage() {
           </div>
 
           {/* Grid */}
-          <div className="events-grid" style={{ marginTop: '40px' }}>
+          <div className={`events-grid ${active === 'All' ? 'events-grid--all-layout' : ''}`} style={{ marginTop: '40px' }}>
             {filtered.map((ev, i) => (
-              <EventCard key={ev.id} event={ev} delay={i % 3 + 1} />
+              <EventCard
+                key={ev.id}
+                event={ev}
+                delay={i % 3 + 1}
+                className={active === 'All' ? `event-card--ev-${ev.id}` : ''}
+              />
             ))}
           </div>
           {filtered.length === 0 && (

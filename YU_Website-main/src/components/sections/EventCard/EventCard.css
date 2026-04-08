@@ -34,6 +34,11 @@
   gap: 28px;
 }
 
+.events-grid--all-layout {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-flow: row dense;
+}
+
 .event-card {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
@@ -45,6 +50,27 @@
   cursor: pointer;
   box-shadow: var(--shadow-sm);
 }
+
+.events-grid--all-layout .event-card--ev-1 {
+  grid-column: 1 / -1;
+}
+
+.events-grid--all-layout .event-card--ev-2,
+.events-grid--all-layout .event-card--ev-3,
+.events-grid--all-layout .event-card--ev-4 {
+  grid-column: span 2;
+}
+
+.events-grid--all-layout .event-card--ev-6,
+.events-grid--all-layout .event-card--ev-7 {
+  grid-column: span 2;
+}
+
+.events-grid--all-layout .event-card--ev-5,
+.events-grid--all-layout .event-card--ev-8 {
+  grid-column: span 4;
+}
+
 .event-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
@@ -55,6 +81,13 @@
   background: linear-gradient(145deg, var(--green-pale) 0%, var(--green-soft) 50%, rgba(196, 163, 90, 0.25) 100%);
   display: flex; align-items: center; justify-content: center;
 }
+
+.events-grid--all-layout .event-card--ev-1 .event-card-img,
+.events-grid--all-layout .event-card--ev-5 .event-card-img,
+.events-grid--all-layout .event-card--ev-8 .event-card-img {
+  height: 275px;
+}
+
 .event-card-photo {
   position: absolute;
   inset: 0;
@@ -92,3 +125,70 @@
 }
 .event-meta span { display: flex; align-items: center; gap: 5px; }
 .event-meta i { color: var(--green-deep); }
+
+.events-grid--all-layout .event-card--ev-1 .event-card-body,
+.events-grid--all-layout .event-card--ev-5 .event-card-body,
+.events-grid--all-layout .event-card--ev-8 .event-card-body {
+  padding: 28px;
+}
+
+.events-grid--all-layout .event-card--ev-1 .event-card-body h3,
+.events-grid--all-layout .event-card--ev-5 .event-card-body h3,
+.events-grid--all-layout .event-card--ev-8 .event-card-body h3 {
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+}
+
+.events-grid--all-layout .event-card--ev-1 .event-card-body p,
+.events-grid--all-layout .event-card--ev-5 .event-card-body p,
+.events-grid--all-layout .event-card--ev-8 .event-card-body p {
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .events-grid--all-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .events-grid--all-layout .event-card {
+    grid-column: span 1;
+  }
+
+  .events-grid--all-layout .event-card--ev-1,
+  .events-grid--all-layout .event-card--ev-5,
+  .events-grid--all-layout .event-card--ev-8 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .events-grid--all-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .events-grid--all-layout .event-card {
+    grid-column: span 1;
+  }
+
+  .events-grid--all-layout .event-card--ev-1 .event-card-img,
+  .events-grid--all-layout .event-card--ev-5 .event-card-img,
+  .events-grid--all-layout .event-card--ev-8 .event-card-img {
+    height: 230px;
+  }
+
+  .events-grid--all-layout .event-card--ev-1 .event-card-body h3,
+  .events-grid--all-layout .event-card--ev-5 .event-card-body h3,
+  .events-grid--all-layout .event-card--ev-8 .event-card-body h3 {
+    font-size: 1.45rem;
+  }
+}
