@@ -18,7 +18,7 @@ export default function Footer() {
             <ul>
               {navLinks.map(link => (
                 <li key={link.id}>
-                  <a href="#" onClick={(e) => { e.preventDefault(); handleNav(link.id); }}>
+                  <a href="/" onClick={(e) => { e.preventDefault(); handleNav(link.id); }}>
                     {link.label}
                   </a>
                 </li>
@@ -30,8 +30,8 @@ export default function Footer() {
             <ul>
               <li><a href="mailto:Yu@thapar.edu">Yu@thapar.edu</a></li>
               <li><a href="tel:+916392092199">+91 63920 92199</a></li>
-              <li><a href="#">Thapar Institute, Patiala</a></li>
-              <li><a href="#">Punjab, India 147004</a></li>
+              <li><span>Thapar Institute, Patiala</span></li>
+              <li><span>Punjab, India 147004</span></li>
             </ul>
           </div>
         </div>

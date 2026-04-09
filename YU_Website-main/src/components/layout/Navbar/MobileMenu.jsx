@@ -17,7 +17,7 @@ export default function MobileMenu({ isOpen, onClose }) {
       </div>
       <div className={`mobile-menu ${isOpen ? 'open' : ''}`} id="mobileMenu">
         {navLinks.map(link => (
-          <a key={link.id} href="#" onClick={(e) => { e.preventDefault(); handleNav(link.id); }}>
+          <a key={link.id} href="/" onClick={(e) => { e.preventDefault(); handleNav(link.id); }}>
             {link.label}{link.cta ? ' →' : ''}
           </a>
         ))}

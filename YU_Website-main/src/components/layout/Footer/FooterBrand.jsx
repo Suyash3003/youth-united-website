@@ -22,13 +22,13 @@ export default function FooterBrand() {
         >
           <i className="fa-brands fa-instagram" aria-hidden="true"></i>
         </a>
-        <a className="footer-social footer-social--linkedin" href="#" aria-label="LinkedIn">
+        <a className="footer-social footer-social--linkedin" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
           <i className="fa-brands fa-linkedin-in" aria-hidden="true"></i>
         </a>
-        <a className="footer-social footer-social--youtube" href="#" aria-label="YouTube">
+        <a className="footer-social footer-social--youtube" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in a new tab)">
           <i className="fa-brands fa-youtube" aria-hidden="true"></i>
         </a>
-        <a className="footer-social footer-social--facebook" href="#" aria-label="Facebook">
+        <a className="footer-social footer-social--facebook" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">
           <i className="fa-brands fa-facebook-f" aria-hidden="true"></i>
         </a>
       </div>
