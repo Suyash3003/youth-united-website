@@ -5,7 +5,7 @@ import './EventsPreviewSection.css';
 const PREVIEW_EVENT = {
   date: 'Apr 18, 2025',
   category: 'INCLUSION',
-  title: 'LA FIESTA 4.0',
+  title: 'LA FIESTA 5.0',
   description:
     'A joyful celebration for differently-abled children from schools and NGOs across Patiala. Together, we celebrate ability through drawing, clay modelling, singing, and dance.',
 };
