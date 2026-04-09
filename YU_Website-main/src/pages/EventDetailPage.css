@@ -1,0 +1,41 @@
+.event-detail-page {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.event-detail-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--event-detail-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+.event-detail-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 10, 9, 0.78);
+  z-index: -1;
+}
+
+.event-detail-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.event-detail-surface {
+  background: rgba(16, 18, 19, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(2px);
+}
+
+@media (max-width: 1024px) {
+  .event-detail-page::before {
+    background-position: center top;
+  }
+}

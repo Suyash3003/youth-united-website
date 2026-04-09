@@ -1,6 +1,6 @@
 export const eventDetails = {
   1: {
-    title: "La Fiesta",
+    title: "La Fiesta -4.0",
     subtitle: "A Celebration of Differently-Abled Children",
     details: {
       date: "18th April, 2025",

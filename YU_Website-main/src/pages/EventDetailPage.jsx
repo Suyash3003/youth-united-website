@@ -2,9 +2,11 @@ import React from 'react';
 import { usePage } from '../context/PageContext';
 import { eventDetails } from '../data/eventDetails';
 import events from '../data/events';
-import RemoteImage from '../components/ui/RemoteImage';
 import '../components/sections/About/About.css';
 import '../components/sections/EventCard/EventCard.css';
+import './EventDetailPage.css';
+
+const DETAIL_BACKGROUND_IMAGE = '/images/events/img-9409.jpg';
 
 export default function EventDetailPage() {
   const { activeEventId, navigateTo } = usePage();
@@ -23,13 +25,16 @@ export default function EventDetailPage() {
   }
 
   return (
-    <main className="event-detail-page">
+    <main
+      className="event-detail-page"
+      style={{ '--event-detail-bg': `url("${DETAIL_BACKGROUND_IMAGE}")` }}
+    >
       {/* Hero Section */}
       <div className="about-hero" style={{ minHeight: '400px', position: 'relative', overflow: 'hidden' }}>
-        {eventBase.image ? (
+        {DETAIL_BACKGROUND_IMAGE ? (
           <>
             <div className="about-hero-bg" style={{ 
-              backgroundImage: `url("${eventBase.image}")`,
+              backgroundImage: `url("${DETAIL_BACKGROUND_IMAGE}")`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -68,11 +73,11 @@ export default function EventDetailPage() {
       </div>
 
       {/* Content Section */}
-      <section style={{ padding: '80px 0', background: '#0a0a0a' }}>
+      <section style={{ padding: '80px 0', background: 'transparent' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 350px', gap: '60px', padding: '0 20px' }}>
           
           <div className="event-main-content">
-            <div className="content-card" style={{ background: '#161616', padding: '40px', borderRadius: '24px', border: '1px solid #222' }}>
+            <div className="content-card event-detail-surface" style={{ padding: '40px', borderRadius: '24px' }}>
               <h2 style={{ fontSize: '2rem', marginBottom: '24px', color: '#fff' }}>About the Event</h2>
               <div style={{ color: '#ccc', lineHeight: '1.8', fontSize: '1.1rem', whiteSpace: 'pre-wrap' }}>
                 {eventDetail.about}
@@ -86,7 +91,7 @@ export default function EventDetailPage() {
               ))}
 
               {eventDetail.purpose && (
-                <div style={{ marginTop: '48px', padding: '32px', background: 'rgba(74, 222, 128, 0.05)', borderRadius: '16px', borderLeft: '4px solid var(--green-soft)' }}>
+                <div style={{ marginTop: '48px', padding: '32px', background: 'rgba(8, 18, 14, 0.6)', borderRadius: '16px', borderLeft: '4px solid var(--green-soft)' }}>
                   <h3 style={{ fontSize: '1.5rem', marginBottom: '16px', color: '#fff' }}>Deeper Purpose</h3>
                   <p style={{ color: '#ccc', lineHeight: '1.8', fontStyle: 'italic' }}>{eventDetail.purpose}</p>
                 </div>
@@ -97,7 +102,7 @@ export default function EventDetailPage() {
               <h2 style={{ fontSize: '2rem', marginBottom: '32px', color: '#fff' }}>Impact & Outcome</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                 {eventDetail.impact.map((item, idx) => (
-                  <div key={idx} style={{ background: '#161616', padding: '24px', borderRadius: '16px', border: '1px solid #222', display: 'flex', gap: '16px' }}>
+                  <div key={idx} className="event-detail-surface" style={{ padding: '24px', borderRadius: '16px', display: 'flex', gap: '16px' }}>
                     <i className="fa-solid fa-circle-check" style={{ color: 'var(--green-soft)', marginTop: '4px' }}></i>
                     <p style={{ color: '#ccc', fontSize: '0.95rem' }}>{item}</p>
                   </div>
@@ -108,7 +113,7 @@ export default function EventDetailPage() {
 
           <aside className="event-sidebar">
             <div style={{ position: 'sticky', top: '100px' }}>
-              <div style={{ background: '#161616', padding: '32px', borderRadius: '24px', border: '1px solid #222', marginBottom: '32px' }}>
+              <div className="event-detail-surface" style={{ padding: '32px', borderRadius: '24px', marginBottom: '32px' }}>
                 <h3 style={{ marginBottom: '24px', fontSize: '1.2rem' }}>Quick Details</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {Object.entries(eventDetail.details).map(([key, value]) => (
@@ -120,7 +125,7 @@ export default function EventDetailPage() {
                 </ul>
               </div>
 
-              <div style={{ background: 'linear-gradient(135deg, #161616 0%, #1a1a1a 100%)', padding: '32px', borderRadius: '24px', border: '1px solid #222', textAlign: 'center' }}>
+              <div className="event-detail-surface" style={{ padding: '32px', borderRadius: '24px', textAlign: 'center' }}>
                 <i className="fa-solid fa-heart-pulse" style={{ fontSize: '2.5rem', color: 'var(--green-soft)', marginBottom: '16px' }}></i>
                 <h4 style={{ marginBottom: '12px' }}>Want to be part of this?</h4>
                 <p style={{ fontSize: '0.9rem', color: '#888', marginBottom: '24px' }}>Join our community and help us make a difference in the next event.</p>

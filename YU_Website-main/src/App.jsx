@@ -1,6 +1,5 @@
 import React from 'react';
 import { PageProvider, usePage } from './context/PageContext';
-import { LightboxProvider } from './context/LightboxContext';
 import Navbar from './components/layout/Navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
 import ScrollProgressBar from './components/layout/ScrollProgressBar';
@@ -10,7 +9,6 @@ import AboutPage from './pages/AboutPage';
 import EventsPage from './pages/EventsPage';
 import EventDetailPage from './pages/EventDetailPage';
 import MembersPage from './pages/MembersPage';
-import GalleryPage from './pages/GalleryPage';
 import JoinUsPage from './pages/JoinUsPage';
 import './styles/global.css';
 
@@ -23,7 +21,6 @@ function PageRouter() {
     events:         <EventsPage />,
     'event-detail': <EventDetailPage />,
     members:        <MembersPage />,
-    gallery:        <GalleryPage />,
     joinus:         <JoinUsPage />,
   };
 
@@ -33,13 +30,11 @@ function PageRouter() {
 export default function App() {
   return (
     <PageProvider>
-      <LightboxProvider>
-        <Loader />
-        <ScrollProgressBar />
-        <Navbar />
-        <PageRouter />
-        <Footer />
-      </LightboxProvider>
+      <Loader />
+      <ScrollProgressBar />
+      <Navbar />
+      <PageRouter />
+      <Footer />
     </PageProvider>
   );
 }

@@ -23,3 +23,33 @@
   font-size: 0.9rem;
   margin: 0;
 }
+
+/* Website Developers cards: slightly smaller and more compact */
+.team-block--tech .faculty-grid {
+  max-width: 740px;
+  gap: 18px;
+}
+
+.team-block--tech .member-card,
+.team-block--tech .member-card-inner {
+  min-height: 310px;
+}
+
+.team-block--tech .member-card-face {
+  padding: 22px;
+}
+
+.team-block--tech .member-avatar {
+  width: 74px;
+  height: 74px;
+  font-size: 1.35rem;
+}
+
+.team-block--tech .member-name {
+  font-size: 1.05rem;
+}
+
+.team-block--tech .member-bio {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}

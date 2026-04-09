@@ -1,7 +1,7 @@
 const events = [
   {
     id: 1,
-    title: 'La Fiesta',
+    title: 'La Fiesta -4.0',
     category: 'Inclusion',
     date: 'Apr 18, 2025',
     location: 'Main Auditorium',
@@ -9,7 +9,7 @@ const events = [
     description:
       'A joyful celebration for differently-abled children from schools and NGOs across Patiala, featuring drawing, clay modelling, singing, and dancing at the Main Auditorium.',
     icon: 'fa-solid fa-universal-access',
-    image: '/images/events/la-fiesta.mp4',
+    image: '/images/events/la-fiesta-5.jpg',
   },
   {
     id: 2,

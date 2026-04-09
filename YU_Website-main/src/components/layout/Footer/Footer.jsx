@@ -26,14 +26,6 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Our Work</h4>
-            <ul>
-              {['Education','Environment','Health & Welfare','Digital Literacy','Community Outreach'].map(w => (
-                <li key={w}><a href="#">{w}</a></li>
-              ))}
-            </ul>
-          </div>
-          <div className="footer-col">
             <h4>Contact</h4>
             <ul>
               <li><a href="mailto:Yu@thapar.edu">Yu@thapar.edu</a></li>

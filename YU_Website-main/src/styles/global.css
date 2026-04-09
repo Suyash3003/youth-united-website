@@ -121,7 +121,6 @@ section { padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 80px); }
    ============================================= */
 @media (max-width: 1024px) {
   .events-grid, .events-page-grid, .members-grid { grid-template-columns: repeat(2,1fr); }
-  .gallery-grid { columns: 2; }
   .footer-top   { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
@@ -132,7 +131,6 @@ section { padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 80px); }
   .mvv-grid, .testimonials-grid, .perks-grid { grid-template-columns: 1fr; }
   .events-grid, .events-page-grid { grid-template-columns: 1fr; }
   .members-grid   { grid-template-columns: repeat(2,1fr); }
-  .gallery-grid   { columns: 2; }
   .story-inner    { grid-template-columns: 1fr; }
   .timeline-wrap::before { left: 16px; }
   .timeline-item, .timeline-item:nth-child(even) { flex-direction: row; }
@@ -145,6 +143,5 @@ section { padding: clamp(64px, 10vw, 120px) clamp(20px, 5vw, 80px); }
 @media (max-width: 480px) {
   .stats-grid  { grid-template-columns: 1fr 1fr; }
   .members-grid{ grid-template-columns: 1fr; }
-  .gallery-grid{ columns: 1; }
   .hero-actions{ flex-direction: column; }
 }

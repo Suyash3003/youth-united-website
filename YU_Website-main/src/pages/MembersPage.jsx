@@ -68,8 +68,11 @@ export default function MembersPage() {
             </div>
           )}
           {active !== 'Faculty' && active !== 'Developers' && (
-            <div className="members-grid members-leadership-grid" style={{ marginTop: showFaculty && active === 'All' ? 32 : 40 }}>
-              {filteredStudents.map(m => <MemberCard key={m.id} member={m} />)}
+            <div className="team-block team-block--students" style={{ marginTop: showFaculty && active === 'All' ? 32 : 40 }}>
+              <h3 className="team-block-title">Student Representative</h3>
+              <div className="members-grid members-leadership-grid">
+                {filteredStudents.map(m => <MemberCard key={m.id} member={m} />)}
+              </div>
             </div>
           )}
           {active !== 'Faculty' && active !== 'Developers' && filteredStudents.length === 0 && (

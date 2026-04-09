@@ -93,6 +93,13 @@
   display: block;
 }
 
+.member-photo--contain {
+  object-fit: contain;
+  object-position: center;
+  transform: scale(0.86);
+  transform-origin: center;
+}
+
 .member-info {
   width: 100%;
 }
