@@ -3,6 +3,8 @@ import { LOGO_ALT, LOGO_SRC } from '../../../constants/branding';
 
 const INSTAGRAM_URL =
   'https://www.instagram.com/yu.tiet?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==';
+const LINKEDIN_URL = 'https://www.linkedin.com/company/youth-united-patiala-chapter/';
+const YOUTUBE_URL = 'https://youtube.com/@youthunited-patialachapter?si=KY7NaNh4Q42GrfVZ';
 
 export default function FooterBrand() {
   return (
@@ -22,14 +24,11 @@ export default function FooterBrand() {
         >
           <i className="fa-brands fa-instagram" aria-hidden="true"></i>
         </a>
-        <a className="footer-social footer-social--linkedin" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
+        <a className="footer-social footer-social--linkedin" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
           <i className="fa-brands fa-linkedin-in" aria-hidden="true"></i>
         </a>
-        <a className="footer-social footer-social--youtube" href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in a new tab)">
+        <a className="footer-social footer-social--youtube" href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in a new tab)">
           <i className="fa-brands fa-youtube" aria-hidden="true"></i>
-        </a>
-        <a className="footer-social footer-social--facebook" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">
-          <i className="fa-brands fa-facebook-f" aria-hidden="true"></i>
         </a>
       </div>
     </div>

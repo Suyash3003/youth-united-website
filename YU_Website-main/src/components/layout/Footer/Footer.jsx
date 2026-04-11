@@ -1,6 +1,7 @@
 import React from 'react';
 import FooterBrand from './FooterBrand';
 import navLinks from '../../../data/navigation';
+import { techMembers } from '../../../data/members';
 import { usePage } from '../../../context/PageContext';
 import './Footer.css';
 
@@ -33,6 +34,31 @@ export default function Footer() {
               <li><span>Thapar Institute, Patiala</span></li>
               <li><span>Punjab, India 147004</span></li>
             </ul>
+          </div>
+        </div>
+        <div className="footer-developers">
+          <h4>Website Developers</h4>
+          <div className="footer-developers-list">
+            {techMembers.map(dev => (
+              <div key={dev.id} className="footer-developer">
+                <div>
+                  <p className="footer-developer-name">{dev.name}</p>
+                  <p className="footer-developer-role">{dev.role}</p>
+                </div>
+                <div className="footer-developer-socials">
+                  {dev.socials?.linkedin && dev.socials.linkedin !== '#' && (
+                    <a href={dev.socials.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                      <i className="fa-brands fa-linkedin-in"></i>
+                    </a>
+                  )}
+                  {dev.socials?.instagram && dev.socials.instagram !== '#' && (
+                    <a href={dev.socials.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+                      <i className="fa-brands fa-instagram"></i>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="footer-bottom">

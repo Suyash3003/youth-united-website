@@ -6,12 +6,16 @@ import '../components/sections/About/About.css';
 import '../components/sections/EventCard/EventCard.css';
 import './EventDetailPage.css';
 
-const DETAIL_BACKGROUND_IMAGE = '/images/events/img-9409.jpg';
+const LA_FIESTA_DETAIL_BACKGROUND_IMAGE = '/images/events/img-9409.jpg';
 
 export default function EventDetailPage() {
   const { activeEventId, navigateTo } = usePage();
   const eventDetail = eventDetails[activeEventId];
   const eventBase = events.find(e => e.id === activeEventId);
+  const detailBackgroundImage =
+    activeEventId === 1
+      ? LA_FIESTA_DETAIL_BACKGROUND_IMAGE
+      : eventBase?.image || LA_FIESTA_DETAIL_BACKGROUND_IMAGE;
 
   if (!eventDetail || !eventBase) {
     return (
@@ -27,14 +31,14 @@ export default function EventDetailPage() {
   return (
     <main
       className="event-detail-page"
-      style={{ '--event-detail-bg': `url("${DETAIL_BACKGROUND_IMAGE}")` }}
+      style={{ '--event-detail-bg': `url("${detailBackgroundImage}")` }}
     >
       {/* Hero Section */}
       <div className="about-hero" style={{ minHeight: '400px', position: 'relative', overflow: 'hidden' }}>
-        {DETAIL_BACKGROUND_IMAGE ? (
+        {detailBackgroundImage ? (
           <>
             <div className="about-hero-bg" style={{ 
-              backgroundImage: `url("${DETAIL_BACKGROUND_IMAGE}")`,
+              backgroundImage: `url("${detailBackgroundImage}")`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',

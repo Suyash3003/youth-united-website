@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './MemberCard.css';
 
 export default function MemberCard({ member }) {
-  const { name, role, department, year, initials, bio, faculty, photo, photoFit, socials } = member;
+  const { name, role, department, year, initials, bio, faculty, photo, photoFit, photoPosition, socials } = member;
   const [photoFailed, setPhotoFailed] = useState(false);
   const showPhoto = Boolean(photo) && !photoFailed;
 
@@ -24,6 +24,7 @@ export default function MemberCard({ member }) {
                 className={`member-photo${photoFit === 'contain' ? ' member-photo--contain' : ''}`}
                 loading="lazy"
                 decoding="async"
+                style={photoPosition ? { objectPosition: photoPosition } : undefined}
                 onError={() => setPhotoFailed(true)}
               />
             ) : (
