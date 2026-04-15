@@ -27,7 +27,7 @@ export const facultyMembers = [
     faculty: true,
     bio: 'Supports community partnerships, volunteer training, and impact documentation across verticals.',
     leadership: true,
-    socials: { linkedin: '#' },
+    socials: { linkedin: 'https://www.linkedin.com/in/rajesh-dhayal-87aaa8248/' },
   },
 ];
 
